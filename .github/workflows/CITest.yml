@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
-        run: actions/setup-node@v3 #installation of node env
+        uses: actions/setup-node@v3 #installation of node env
           
       - run : npm install # dependencies installation
       - run : npm run build --if-present # build development project
