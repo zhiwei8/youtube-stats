@@ -26,3 +26,12 @@ jobs:
           
       - run : npm install # dependencies installation
       - run : npm run build --if-present # build development project
+      
+      - name: Docker Build and Push Youtube Stats
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+            image: zhiwei8/reactappp3
+            registry: docker.io
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
+            
